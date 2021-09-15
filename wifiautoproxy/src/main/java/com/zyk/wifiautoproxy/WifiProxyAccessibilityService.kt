@@ -37,8 +37,9 @@ class WifiProxyAccessibilityService : BaseAccessibilityService() {
                     inputText(portInfo, WifiConfig.port)
                     clickViewByID("com.android.settings:id/save_button")
                     Toast.makeText(
-                        this, "已经打开代理!\n ${WifiConfig.host}:${WifiConfig.port}", Toast
-                            .LENGTH_LONG
+                        this,
+                        "已经打开${WifiConfig.proxyType}代理!\n ${WifiConfig.host}:${WifiConfig.port}",
+                        Toast.LENGTH_LONG
                     ).apply { setGravity(Gravity.CENTER, 0, 0) }.show()
                 } else {
                     val none = findViewByText("无", true)
@@ -51,6 +52,4 @@ class WifiProxyAccessibilityService : BaseAccessibilityService() {
             }
         }
     }
-
-
 }

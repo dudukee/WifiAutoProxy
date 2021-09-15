@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun renderUI() {
-        supportActionBar?.title = "当前 IP 地址: ${IpGetUtils.getLocalIpAddress(this)}"
+        supportActionBar?.title = "手机 IP 地址: ${IpGetUtils.getLocalIpAddress(this)}"
         ipCharles.setText(sp.getString(IP_CHARLES, ""))
         portCharles.check(sp.getInt(PORT_CHARLES, R.id.c_first))
         ipHassan.setText(sp.getString(IP_HASSAN, ""))
@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             save2Sp()
             WifiConfig.open = true
+            WifiConfig.proxyType = WifiConfig.ProxyType.CHARLES
             WifiConfig.host = ipCharles.editableText.toString()
             WifiConfig.port =
                 findViewById<RadioButton>(portCharles.checkedRadioButtonId).text.toString()
@@ -87,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             save2Sp()
             WifiConfig.open = true
+            WifiConfig.proxyType = WifiConfig.ProxyType.HASSAN
             WifiConfig.host = ipHassan.editableText.toString()
             WifiConfig.port =
                 findViewById<RadioButton>(portHassan.checkedRadioButtonId).text.toString()

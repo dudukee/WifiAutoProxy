@@ -13,6 +13,9 @@ object WifiConfig {
     var open: Boolean = false
 
     @JvmField
+    var asOpen = true
+
+    @JvmField
     var host: String = ""
 
     @JvmField

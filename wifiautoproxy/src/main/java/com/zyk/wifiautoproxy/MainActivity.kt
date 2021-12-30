@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             save2Sp()
             WifiConfig.open = true
+            WifiConfig.asOpen = true
             WifiConfig.proxyType = WifiConfig.ProxyType.CHARLES
             WifiConfig.host = ipCharles.editableText.toString()
             WifiConfig.port =
@@ -117,6 +118,7 @@ class MainActivity : AppCompatActivity() {
             BaseAccessibilityService.goAccess(this)
         } else {
             WifiConfig.open = false
+            WifiConfig.asOpen = true
             startActivity(Intent(Settings.ACTION_WIFI_SETTINGS).apply {
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

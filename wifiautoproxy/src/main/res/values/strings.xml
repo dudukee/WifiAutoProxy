@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Wifi Proxy</string>
-    <string name="bili_wifi_proxy">bili wifi 自动代理</string>
+    <string name="bili_wifi_proxy">Wifi 自动代理</string>
     <string name="charles_proxy">Charles 代理</string>
     <string name="proxy_port">代理端口</string>
     <string name="hassan_proxy">Hassan 代理</string>
